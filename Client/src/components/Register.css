@@ -1,0 +1,77 @@
+/* Register Page CSS */
+
+.wrapper {
+    background-color: #f1f1f1;
+    min-height:100%;
+
+}
+
+
+.register {
+    width: 500px;
+    height:550px;
+    background-color: #fff;
+    padding: 80px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+    color: red;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group form-check {
+    margin-bottom: 30px;
+}
+
+.text-primary {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.text-primary:hover {
+    text-decoration: underline;
+}
+.bg-image {
+    background-image: url('bg.jpg'); /* Replace 'path/to/your/image.jpg' with the path to your image */
+    /*background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+
+    
+}
+
+.bg2-image {
+    background-image: url('bg2.png'); /* Replace 'path/to/your/image.jpg' with the path to your image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    
+}

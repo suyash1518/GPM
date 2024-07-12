@@ -1,0 +1,6 @@
+.bg-image {
+    background-image: url('bg.jpg'); /* Replace 'path/to/your/image.jpg' with the path to your image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    
+}

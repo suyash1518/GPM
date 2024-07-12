@@ -1,0 +1,73 @@
+/* Navbar.css*/
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+#main{
+    background-color:#f1e349;
+}
+
+.navbar {
+    height:120px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: rgb(238, 138, 85);
+    color:black(255, 255, 255);
+    padding-inline: 45px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center; 
+}
+
+.navbar-right{
+    display: flex;
+    color: black;
+}
+
+#gov{
+    width:140px;
+    height:50px;
+    margin-right: 25px;
+}
+
+#oil{
+    width:160px;
+    height:60px;
+}
+
+#image{
+    width:140px;
+    height:60px;
+    margin-left: 10px;
+}
+#bg{
+    width:20px;
+    height:20px;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.navbar-link:hover{
+    text-decoration: underline;
+}
+h1{
+    text-align: center;
+    margin-left: 180px;
+}
+
