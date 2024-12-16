@@ -19,7 +19,7 @@ import AdminStatus from './components/AdminStatus';
 export const UserContext = createContext()
 const router = createBrowserRouter([
   {
-  path: '/Home',
+  path: '/',
   element:<Home/>
   },
   {
