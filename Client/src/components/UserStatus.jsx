@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './UserStatus.css';
-import axios from 'axios'
-import { useNavigate, Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.css';
-//import Header from '../components/Header';
-import { useContext } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../App';
-import DataTable from 'react-data-table-component'
-//import io from 'socket.io-client';///
-
+import DataTable from 'react-data-table-component';
 
 const customStyles = {
     rows: {
-            Cell: {
-                className:'custom-row',
-            
+        Cell: {
+            className: 'custom-row',
         },
     },
     headCells: {
@@ -30,87 +24,60 @@ const customStyles = {
         },
     },
 };
- //const socket =io('http://127.0.0.1:3000');
+
 function UserStatus() {
-    // ... (other code remains unchanged)
-    const [contacts, setContacts] = useState([])
+    const [contacts, setContacts] = useState([]);
     const { user } = useContext(UserContext);
-    //const Name = user.name;
+
     const columns = [
+        { name: 'Name', selector: (row) => row.name },
+        { name: 'Designation', selector: (row) => row.designation },
+        { name: 'Purpose', selector: (row) => row.purpose },
+        { name: 'Department', selector: (row) => row.department },
+        { name: 'Mentor', selector: (row) => row.mentor },
+        { name: 'Status', selector: (row) => row.Status },
+    ];
 
-        {
-            name: "name",
-            selector: (row) => row.name
-        },
-        {
-            name: "designation",
-            selector: (row) => row.designation
-        },
-        {
-            name: "purpose",
-            selector: (row) => row.purpose
-        },
-        {
-            name: "department",
-            selector: (row) => row.department
-        },
-        {
-            name: "mentor",
-            selector: (row) => row.mentor
-        },
-        {
-            name: "Status",
-            selector: (row) => row.Status
-        },
-        ]
-
-        useEffect(() => {
-            axios.get('http://127.0.0.1:3000/contactmsyt/installreqs', {
-                 headers: {                                                      
-                     Authorization: `Berear ${localStorage.getItem('token')}`       
-                 }
+    useEffect(() => {
+        axios
+            .get('http://127.0.0.1:3000/contactmsyt/installreqs', {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
             })
-                .then((res) => {
-                    if (res.data.success) {
-    
-                        setContacts(res.data.contacts)
-    
-                    }
-                })
-    
-                .catch((err) => {
-                    console.log(err);
-    
-                });
-    
-        }, [])
+            .then((res) => {
+                if (res.data.success) {
+                    setContacts(res.data.contacts);
+                }
+            })
+            .catch((err) => console.error(err));
+    }, []);
 
-    
-    //const navigate = useNavigate();
     return (
-        <>
-           
-            <div className='border border-white Maincontainer'>
-                <div className='col-2 box bg-light ms-1 mt-0' id='box2'>
-                <Link to="/Login" className='text text-light text-decoration-none'> <button className='container-fluid btn btn-danger block bttn' type="submit">Log Out</button></Link>
-                </div>
-                <div className='col-1 row-1 box bg-light ms-1 mt-0 me-0' id='box1'>
-                    <DataTable
-                        columns={columns}
-                        //data={contacts}
-                        data={contacts.map(contacts => ({ ...contacts, tag: contacts.Status.toLowerCase() }))}
-                        customStyles={customStyles}
-                        pagination />
-                </div>
+        <div className="Maincontainer">
+            {/* Logout Button Section */}
+            <div className="col-2 box" id="box2">
+                <Link to="/Login" className="text-decoration-none">
+                    <button className="container-fluid btn btn-danger bttn" type="button">
+                        Log Out
+                    </button>
+                </Link>
             </div>
-        </>
+
+            {/* Table Section */}
+            <div className="col-1 box" id="box1">
+                <DataTable
+                    columns={columns}
+                    data={contacts.map((contact) => ({
+                        ...contact,
+                        tag: contact.Status?.toLowerCase(),
+                    }))}
+                    customStyles={customStyles}
+                    pagination
+                />
+            </div>
+        </div>
     );
 }
 
-
 export default UserStatus;
-
-
-
-
-

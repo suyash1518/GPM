@@ -1,120 +1,48 @@
-.container{
-    display:flex;
-   /* max-width: 1300px;
-    margin: 2px auto;
-    justify-content:start;*/
-    width: 1148px;
+.Maincontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Ensures center alignment */
+  align-items: flex-start; /* Aligns items at the start vertically */
+  max-width: 1200px; /* Limits the container width for consistent centering */
+  margin: 20px auto; /* Centers the container on the page */
+  gap: 10px; /* Adds spacing between columns */
+  padding: 10px;
 }
 
-.col-1 {
-  flex-shrink: 0; /* shrinks to 0 to apply 70% width*/
-  flex-basis: 82%; /* sets initial width to 70% */
-  }
+.col-2, .col-1 {
+  flex: 1 1 48%; /* Makes both columns take equal width, responsive */
+  max-width: 48%; /* Prevents columns from exceeding half the width */
+  margin: 0;
+}
 
+#box2, #box1 {
+  margin: 0;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow for better visibility */
+}
+
+#box1 {
+  width: 100%; /* Makes it take full container width */
+  max-width: 800px; /* Restricts table width for better centering */
+}
+
+.bttn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
 
 .box {
-  /*background-color: rgb(254, 254, 254);*/
-  padding: 2px;
-  border-radius: 10px;
-  border: 2px solid rgb(116, 113, 113);
-  margin: 0.5rem;
-  box-shadow: 1px 1px 1px #000;
+  background-color: #f8f9fa; /* Light gray for a cleaner look */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.DataTable {
   text-align: left;
-  
-  
-}
-.Autofill{
-  padding: 3px;
-  margin-left: 1rem;
-  line-height: 10vw;
-  border: 2px solid rgb(116, 113, 113);
-  /*background-color: rgb(255, 255, 255);*/
-  
 }
 
-/*@media only screen and (max-width: 700px) {
-  .Maincontainer {
-      /* it place the items in vertical direction */
-   /* flex-direction: row;
-  }
-
-  .box {
-    margin: 0 0 1rem;
-  }
-}*/
-
-#box2{
-  width:20%;
-  justify-content:center;
-  align-items: center;
-  /*margin-left: 5px;
-  padding: 30px;*/
-  /*height: 340px;*/
-  padding-left: 4px;
-  padding-right: 4px;
-  /* margin-left: -80px; */
-  
-}
-
-#box1{
-  width: 80%;
-   padding-left: 10px;
-  /*margin-right: 2rem;*/
-  
-}
-
-/*@media only screen and (max-width: 900px){
-  box1 {
-      /* it place the items in vertical direction */
-   /* flex-direction: row;
-  }
-  .bttn {
-    width:60px;
-    
-  }
-}
-  @media only screen and (min-width: 890px) {
-       .bttn {
-         width:200px;
-         
-       }
-      }*/
-
-  .bttn{
-      /*justify-content: center;*/
-     /* margin-left: 30%;*/
-      border-radius: 5px;
-      /*padding: 1rem;*/
-      width:100%;
-      height: 60px;
-      margin-left:1px;
-      
-  }
-
-  .contact-list{
-    padding: 20px 60px 0px 60px;
-    text-align: center;
-
-  }
-  #Auth{
-    border: 1px solid black;
-  }
-
-
-  .custom-row[data-tag="approved"] {
-    background-color: green;
-}
-
-.custom-row[data-tag="rejected"] {
-    background-color: red;
-}
-
-.custom-row[data-tag="pending"] {
-    background-color: yellow;
-}
-
-  
-
-
-
-  
